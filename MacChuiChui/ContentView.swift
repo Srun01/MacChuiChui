@@ -9,13 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var bleViewModel:BleViewModel
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text(bleViewModel.status)
+            
+            HStack{
+                Spacer()
+                
+                Toggle(isOn: $bleViewModel.isScan) {
+                           Text("Start scan")
+                }.padding()
+                
+                Spacer()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(BleViewModel())
     }
 }

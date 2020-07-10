@@ -13,6 +13,9 @@
 		E61B174624B7F837006AF217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61B174524B7F837006AF217 /* Assets.xcassets */; };
 		E61B174924B7F837006AF217 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61B174824B7F837006AF217 /* Preview Assets.xcassets */; };
 		E61B174C24B7F837006AF217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61B174A24B7F837006AF217 /* LaunchScreen.storyboard */; };
+		E61B175424B7F851006AF217 /* BleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B175324B7F851006AF217 /* BleViewModel.swift */; };
+		E61B175624B7F85C006AF217 /* ServiceIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B175524B7F85C006AF217 /* ServiceIdentifiers.swift */; };
+		E61B175924B7FCD1006AF217 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61B175824B7FCD1006AF217 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		E61B174824B7F837006AF217 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E61B174B24B7F837006AF217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E61B174D24B7F838006AF217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E61B175324B7F851006AF217 /* BleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BleViewModel.swift; path = ../../HeartRateMonitor/HeartRateMonitor/BleViewModel.swift; sourceTree = "<group>"; };
+		E61B175524B7F85C006AF217 /* ServiceIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceIdentifiers.swift; path = ../../HeartRateMonitor/HeartRateMonitor/ServiceIdentifiers.swift; sourceTree = "<group>"; };
+		E61B175824B7FCD1006AF217 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		E61B175A24B7FCF5006AF217 /* MacChuiChui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacChuiChui.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61B175924B7FCD1006AF217 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,7 @@
 			children = (
 				E61B173E24B7F837006AF217 /* MacChuiChui */,
 				E61B173D24B7F837006AF217 /* Products */,
+				E61B175724B7FCD1006AF217 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +65,13 @@
 		E61B173E24B7F837006AF217 /* MacChuiChui */ = {
 			isa = PBXGroup;
 			children = (
+				E61B175A24B7FCF5006AF217 /* MacChuiChui.entitlements */,
 				E61B173F24B7F837006AF217 /* AppDelegate.swift */,
 				E61B174124B7F837006AF217 /* SceneDelegate.swift */,
 				E61B174324B7F837006AF217 /* ContentView.swift */,
+				E61B175324B7F851006AF217 /* BleViewModel.swift */,
 				E61B174524B7F837006AF217 /* Assets.xcassets */,
+				E61B175524B7F85C006AF217 /* ServiceIdentifiers.swift */,
 				E61B174A24B7F837006AF217 /* LaunchScreen.storyboard */,
 				E61B174D24B7F838006AF217 /* Info.plist */,
 				E61B174724B7F837006AF217 /* Preview Content */,
@@ -73,6 +85,14 @@
 				E61B174824B7F837006AF217 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E61B175724B7FCD1006AF217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E61B175824B7FCD1006AF217 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61B175424B7F851006AF217 /* BleViewModel.swift in Sources */,
+				E61B175624B7F85C006AF217 /* ServiceIdentifiers.swift in Sources */,
 				E61B174024B7F837006AF217 /* AppDelegate.swift in Sources */,
 				E61B174224B7F837006AF217 /* SceneDelegate.swift in Sources */,
 				E61B174424B7F837006AF217 /* ContentView.swift in Sources */,
@@ -284,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacChuiChui/MacChuiChui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MacChuiChui/Preview Content\"";
 				DEVELOPMENT_TEAM = Z87CX75J8Y;
@@ -295,6 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zone.chord.MacChuiChui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacChuiChui/MacChuiChui.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MacChuiChui/Preview Content\"";
 				DEVELOPMENT_TEAM = Z87CX75J8Y;
@@ -315,6 +340,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zone.chord.MacChuiChui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
