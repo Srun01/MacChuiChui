@@ -15,6 +15,8 @@ struct ContentView: View {
         VStack {
             Text(bleViewModel.status)
             
+            Text(bleViewModel.uuid)
+            
             HStack{
                 Spacer()
                 
