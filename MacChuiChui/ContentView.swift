@@ -24,6 +24,10 @@ struct ContentView: View {
                            Text("Start scan")
                 }.padding()
                 
+                Toggle(isOn: $bleViewModel.isSaveMoneyMode) {
+                           Text("Save money?")
+                }.padding()
+                
                 Spacer()
             }
         }
