@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Combine
 import CoreBluetooth
+import Telegraph
 
 
 final class BleViewModel: ObservableObject {
@@ -40,9 +41,28 @@ class CBController:NSObject, CBPeripheralDelegate{
     
     var lastManufacturerDataString = ""
     
+    var serverHTTP = Server()
+    
     init(cbManager:CBCentralManager,viewModel:BleViewModel) {
         self.cbManager = cbManager
         self.viewModel = viewModel
+    }
+    
+    func initServer(){
+        try! serverHTTP.start(port: 9000)
+        serverHTTP.route(.POST, "/getUUID", getUUID)
+    }
+    
+    func getUUID(request: HTTPRequest) -> HTTPResponse {
+        let bodyObject: [String : Any] = [
+            "service": "",
+            "data": lastManufacturerDataString,
+            "priority": "Higgggg"
+        ]
+        
+        let bodyData = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
+        
+        return HTTPResponse( .ok, body: bodyData)
     }
     
     func sinkScan() {

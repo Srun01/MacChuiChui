@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D8931E27E84B9E0049A073 /* Telegraph in Frameworks */ = {isa = PBXBuildFile; productRef = 41D8931D27E84B9E0049A073 /* Telegraph */; };
 		E61B174024B7F837006AF217 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B173F24B7F837006AF217 /* AppDelegate.swift */; };
 		E61B174224B7F837006AF217 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B174124B7F837006AF217 /* SceneDelegate.swift */; };
 		E61B174424B7F837006AF217 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61B174324B7F837006AF217 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61B175924B7FCD1006AF217 /* CoreBluetooth.framework in Frameworks */,
+				41D8931E27E84B9E0049A073 /* Telegraph in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +113,9 @@
 			dependencies = (
 			);
 			name = MacChuiChui;
+			packageProductDependencies = (
+				41D8931D27E84B9E0049A073 /* Telegraph */,
+			);
 			productName = MacChuiChui;
 			productReference = E61B173C24B7F837006AF217 /* MacChuiChui.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +144,9 @@
 				Base,
 			);
 			mainGroup = E61B173324B7F837006AF217;
+			packageReferences = (
+				41D8931C27E84B9E0049A073 /* XCRemoteSwiftPackageReference "Telegraph" */,
+			);
 			productRefGroup = E61B173D24B7F837006AF217 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41D8931C27E84B9E0049A073 /* XCRemoteSwiftPackageReference "Telegraph" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Building42/Telegraph.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41D8931D27E84B9E0049A073 /* Telegraph */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41D8931C27E84B9E0049A073 /* XCRemoteSwiftPackageReference "Telegraph" */;
+			productName = Telegraph;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E61B173424B7F837006AF217 /* Project object */;
 }

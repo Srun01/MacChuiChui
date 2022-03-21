@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         controll = CBController(cbManager: bleManager, viewModel: bleViewModel)
         bleViewModel.cbController = controll
         controll?.sinkScan()
+        controll?.initServer()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
