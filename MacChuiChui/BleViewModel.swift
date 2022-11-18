@@ -50,7 +50,7 @@ class CBController:NSObject, CBPeripheralDelegate{
     
     func initServer(){
         try! serverHTTP.start(port: 9000)
-        serverHTTP.route(.POST, "/getUUID", getUUID)
+        serverHTTP.route(.GET, "/getUUID", getUUID)
     }
     
     func getUUID(request: HTTPRequest) -> HTTPResponse {
